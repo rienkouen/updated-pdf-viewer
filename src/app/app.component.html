@@ -1,0 +1,22 @@
+<input type="file" (change)="loadPdf($event)" accept="application/pdf">
+<div #pdfContainer></div>
+<div>
+  <label>
+    <input type="checkbox" [(ngModel)]="showFirstPage" (change)="onShowFirstPageChange()"> Show First Page Square
+  </label>
+  <label>
+    <input type="checkbox" [(ngModel)]="showMiddlePages" (change)="onShowMiddlePagesChange()"> Show Middle Pages Squares
+  </label>
+  <label>
+    <input type="checkbox" [(ngModel)]="showLastPage" (change)="onShowLastPageChange()"> Show Last Page Square
+  </label>
+</div>
+<div>
+  <p>First Page Square Position: {{firstPagePosition}}</p>
+  <p>Middle Pages Squares Position: {{middlePagesPosition}}</p>
+  <p>Last Page Square Position: {{lastPagePosition}}</p>
+</div>
+<div>
+  <p>Debug Info: {{debugInfo}}</p>
+  <p *ngIf="error" style="color: red;">Error: {{error}}</p>
+</div>
